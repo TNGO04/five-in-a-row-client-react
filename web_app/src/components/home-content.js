@@ -4,23 +4,23 @@ import {Link} from "react-router-dom";
 export const HomeContent = () => {
     return (
         <>
-            <div className="mb-4 lead">Sign Up or Log In to Get Started</div>
+            <div className="mb-5 lead">Sign Up or Log In to Get Started</div>
             <div className="row">
 
                 <div className="col d-flex flex-column align-items-center"
                      style={{'width': '250px'}}>
-                    <label htmlFor="signUpBtn">New User?</label>
+                    <label htmlFor="signUpBtn"><b> New User?</b></label>
                     <Link to="/signup">
-                        <button id="signUpBtn" className="btn btn-primary fiar-btn">Sign Up</button>
+                        <button id="signUpBtn" className="btn btn-custom fiar-btn">Sign Up</button>
                     </Link>
                 </div>
 
 
                 <div className="col d-flex flex-column align-items-center"
                      style={{'width': '250px'}}>
-                    <label htmlFor="loginBtn">Have An Account?</label>
+                    <label htmlFor="loginBtn"><b>Have An Account?</b></label>
                     <Link to="/login">
-                        <button id="loginBtn" className="btn btn-primary fiar-btn"> Login</button>
+                        <button id="loginBtn" className="btn btn-custom fiar-btn"> Login</button>
                     </Link>
                 </div>
 
