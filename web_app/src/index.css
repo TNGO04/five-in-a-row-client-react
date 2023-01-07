@@ -55,7 +55,7 @@ body {
 }
 
 .cover-container {
-  max-width: 45em;
+  max-width: 70em;
 }
 
 
@@ -167,7 +167,7 @@ a {
 .icon-large {
   width: 5rem;
   height: 5rem;
-  margin-bottom: 1rem;
+
 }
 
 .card {
@@ -201,5 +201,48 @@ label {
 
 .form-control {
   width: 10rem;
+}
+
+.game-page .card {
+  width: 8rem;
+  padding-bottom: 1rem;
+  padding-top: 1rem;
+}
+
+
+
+@media (min-width: 700px) and (min-height: 700px) and ((max-width: 1200px) or (max-height: 1200px)){
+  .game-board.card {
+    width: 550px;
+    height: 550px;
+  }
+}
+
+@media (max-width: 700px) or (max-height: 700px){
+  .game-board.card {
+    width: 450px;
+    height: 450px;
+  }
+}
+
+.board-cell{
+  width:21px;
+  height: 21px;
+  background-color: transparent;
+  border: solid 1px rgba(0,0,0,0.3);
+  opacity: 60%;
+  border-radius: 0.3rem;
+  color: white;
+  text-align: center;
+  justify-items: center;
+}
+
+.symbol {
+  font-size: 0.9rem;
+  margin: auto;
+  padding: 0px;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: 0.9rem;
 }
 

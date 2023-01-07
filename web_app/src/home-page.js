@@ -7,7 +7,7 @@ import Login from "./components/login";
 import SelectGame from "./components/select-game";
 import {GamePage} from "./components/game-page/game-page";
 
-export const HomePage = ({isLoggedIn = false}) => {
+export const HomePage = ({isLoggedIn = true}) => {
     return (
         <BrowserRouter>
             <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column overflow-hidden">
