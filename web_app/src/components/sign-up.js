@@ -1,8 +1,8 @@
 import React, {useState} from 'react';
-import { confirmAlert } from 'react-confirm-alert'; // Import
+import {confirmAlert} from 'react-confirm-alert'; // Import
 import 'react-confirm-alert/src/react-confirm-alert.css'
-import {useNavigate} from "react-router-dom"; // Import css
-
+import {useNavigate} from "react-router-dom";
+import Logo from "./logo"; // Import css
 
 export const SignUp = () => {
     const navigate = useNavigate();
@@ -17,32 +17,34 @@ export const SignUp = () => {
                                  onClick: () => navigate("/")
                              }
                          ],
-                         overlayClassName: "overlay-custom-class-name"      // Custom overlay class name
+                         overlayClassName: "overlay-custom-class-name"      // Custom overlay class
+                                                                            // name
                      })
     };
 
     return (
-        <div className="px-5">
-            <div className="d-flex flex-row justify-content-end gap-4 align-items-center mb-3">
-                <label htmlFor="usernameFld">Username</label>
-                <input id="usernameFld" type='text' className="form-control"
-                       style={{'width':'250px'}}/>
+        <>
+            <Logo/>
+            <div className="px-5">
+                <div className="d-flex flex-row justify-content-end gap-4 align-items-center mb-3">
+                    <label htmlFor="usernameFld">Username</label>
+                    <input id="usernameFld" type='text' className="form-control"
+                           />
+                </div>
+
+                <div className="d-flex flex-row justify-content-end gap-4 align-items-center mb-1">
+                    <label htmlFor="passwordFld">Password </label>
+                    <input id="passwordFld" type='password' className="form-control"
+                           />
+                </div>
+
+
+                <button type="button" className="mt-5 btn btn-custom"
+                        onClick={submit}>
+                    Sign Up
+                </button>
             </div>
-
-            <div className="d-flex flex-row justify-content-end gap-4 align-items-center mb-1">
-                <label htmlFor="passwordFld">Password </label>
-                <input id="passwordFld" type='password' className="form-control"
-                       style={{'width':'250px'}}/>
-            </div>
-
-
-            <button type="button" className="mt-5 btn-custom fiar-btn"
-                    onClick={submit}>
-                Sign Up
-            </button>
-
-        </div>
-
+        </>
     )
 };
 

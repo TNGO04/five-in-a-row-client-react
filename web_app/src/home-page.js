@@ -7,26 +7,15 @@ import Login from "./components/login";
 import SelectGame from "./components/select-game";
 import {GamePage} from "./components/game-page/game-page";
 
-export const HomePage = ({isLoggedIn = true}) => {
+export const HomePage = ({isLoggedIn = false}) => {
     return (
         <BrowserRouter>
-
-            <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column">
-
-                <header className="masthead mb-5">
-                    <div className="inner">
-                        <NavBar isLoggedIn={isLoggedIn}/>
-
-                    </div>
-                </header>
-
+            <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column overflow-hidden">
+                <NavBar isLoggedIn={isLoggedIn}/>
                 <main role="main" className="inner cover">
-                    <h1 className="cover-heading pb-2 mb-5">Caro</h1>
-
                     <Routes>
                         <Route path="/" element={
                             isLoggedIn ? <SelectGame/> : <HomeContentUnlogged/>}/>
-
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/game" element={<GamePage/>}/>
@@ -36,7 +25,7 @@ export const HomePage = ({isLoggedIn = true}) => {
 
                 <footer className="mastfoot mt-auto">
                     <div className="inner">
-                        <p><a href="">GitHub repository</a></p>
+                        <a href="">GitHub repository</a>
                     </div>
                 </footer>
 
