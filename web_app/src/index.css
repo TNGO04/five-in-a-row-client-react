@@ -237,6 +237,10 @@ label {
   justify-items: center;
 }
 
+.board-cell:hover {
+  border: solid 2px rgba(250,250,250,0.3);
+}
+
 .symbol {
   font-size: 0.9rem;
   margin: auto;

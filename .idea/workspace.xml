@@ -4,9 +4,6 @@
     <list default="true" id="12e12126-35e0-47c4-b86c-c268cadaa472" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/src/components/game-page/game-board.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/components/game-page/game-board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/src/components/game-page/game-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/components/game-page/game-page.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/src/components/select-game.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/components/select-game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/src/home-page.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/home-page.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web_app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,7 +55,7 @@
       <updated>1672894193725</updated>
       <workItem from="1672894196530" duration="12969000" />
       <workItem from="1672943018278" duration="12699000" />
-      <workItem from="1673060138094" duration="16042000" />
+      <workItem from="1673060138094" duration="17240000" />
     </task>
     <servers />
   </component>

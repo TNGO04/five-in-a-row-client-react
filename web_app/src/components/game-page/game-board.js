@@ -13,7 +13,7 @@ export const GameBoard = () => {
                               <div className="d-flex flex-fill bd-highlight flex-column m-0
                                 board-cell"
                                 >
-                                  <div className="symbol align-center">{index%2 == 1 ? 'x': 'o'}</div>
+                                  <div className="symbol align-center">{index%2 == 1 ? 'X': 'O'}</div>
                               </div>)
                 }
 
