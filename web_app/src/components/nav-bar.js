@@ -7,8 +7,9 @@ export const NavBar = ({
     const currentPath = useLocation().pathname;
     return (
         <>
-            <Link to="/"><h3 className="masthead-brand">Caro</h3></Link>
+
             <nav className="col nav nav-masthead justify-content-center">
+
                 <div className={`nav-link ${currentPath === '/' ? 'active' : ''}`}>
                     <Link to="/">Home</Link>
                 </div>

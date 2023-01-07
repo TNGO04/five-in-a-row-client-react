@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 
-export const HomeContent = () => {
+export const HomeContentUnlogged = () => {
     return (
         <>
             <div className="mb-5 lead">Sign Up or Log In to Get Started</div>
@@ -29,4 +29,4 @@ export const HomeContent = () => {
     )
 }
 
-export default HomeContent;
+export default HomeContentUnlogged;

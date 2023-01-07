@@ -1,20 +1,22 @@
 import React from 'react';
 import NavBar from "./components/nav-bar";
 import {BrowserRouter, Route, Routes, Navigate} from "react-router-dom"
-import HomeContent from "./components/home-content";
+import HomeContentUnlogged from "./components/home-content";
 import SignUp from "./components/sign-up";
 import Login from "./components/login";
+import SelectGame from "./components/select-game";
 
-export const HomePage = () => {
+export const HomePage = ({isLoggedIn = true}) => {
     return (
         <BrowserRouter>
 
             <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column"
-                 style={{'width': '500px'}}>
+                 style={{'width': '700px'}}>
 
                 <header className="masthead mb-5">
                     <div className="inner">
-                        <NavBar isLoggedIn={true}/>
+                        <NavBar isLoggedIn={isLoggedIn}/>
+
                     </div>
                 </header>
 
@@ -22,7 +24,8 @@ export const HomePage = () => {
                     <h1 className="cover-heading pb-2 mb-5">Caro</h1>
 
                     <Routes>
-                        <Route path="/" element={<HomeContent/>}/>
+                        <Route path="/" element={
+                            isLoggedIn ? <SelectGame/> : <HomeContentUnlogged/>}/>
 
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>

@@ -16,7 +16,7 @@ export const Login = () => {
             </div>
 
 
-            <button className="mt-5 btn btn-primary fiar-btn">Login</button>
+            <button className="mt-5 btn btn-custom fiar-btn">Login</button>
         </div>
     )
 }
