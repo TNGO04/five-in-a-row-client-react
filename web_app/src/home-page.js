@@ -5,13 +5,13 @@ import HomeContentUnlogged from "./components/home-content";
 import SignUp from "./components/sign-up";
 import Login from "./components/login";
 import SelectGame from "./components/select-game";
+import {GamePage} from "./components/game-page/game-page";
 
 export const HomePage = ({isLoggedIn = true}) => {
     return (
         <BrowserRouter>
 
-            <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column"
-                 style={{'width': '700px'}}>
+            <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column">
 
                 <header className="masthead mb-5">
                     <div className="inner">
@@ -29,6 +29,7 @@ export const HomePage = ({isLoggedIn = true}) => {
 
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
+                        <Route path="/game" element={<GamePage/>}/>
                     </Routes>
 
                 </main>
