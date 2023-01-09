@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="12e12126-35e0-47c4-b86c-c268cadaa472" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/src/components/game-page/game-board.js" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/components/game-page/game-board.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web_app/src/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/web_app/src/index.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,16 +28,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/Trang Ngo/IdeaProjects/five-in-a-row-client-react&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/Trang Ngo/IdeaProjects/five-in-a-row-client-react/web_app",
+    "nodejs_package_manager_path": "npm"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Trang Ngo\IdeaProjects\five-in-a-row-client-react\web_app\src\components\game-page" />
@@ -56,6 +54,12 @@
       <workItem from="1672894196530" duration="12969000" />
       <workItem from="1672943018278" duration="12699000" />
       <workItem from="1673060138094" duration="17240000" />
+      <workItem from="1673214634934" duration="267000" />
+      <workItem from="1673214915784" duration="30000" />
+      <workItem from="1673214951071" duration="23000" />
+      <workItem from="1673214980948" duration="15000" />
+      <workItem from="1673215001871" duration="28000" />
+      <workItem from="1673215034516" duration="26000" />
     </task>
     <servers />
   </component>
