@@ -5,12 +5,19 @@ import '@fortawesome/fontawesome-free/js/all.js';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import HomePage from "./home-page";
+import {combineReducers, createStore} from "redux";
+import sessionReducer from "./reducer/session-reducer";
+import {Provider} from "react-redux";
 
+const rootReducer = combineReducers({sessionReducer: sessionReducer});
+const store = createStore(rootReducer);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <HomePage></HomePage>
+      <Provider store={store}>
+        <HomePage></HomePage>
+      </Provider>
   </React.StrictMode>
 );
 

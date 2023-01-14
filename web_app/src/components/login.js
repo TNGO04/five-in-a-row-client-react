@@ -2,8 +2,9 @@ import React, {useRef, useState} from 'react'
 import Logo from "./logo";
 import userService from "../services/user-service";
 import {useNavigate} from "react-router-dom";
+import {connect} from "react-redux";
 
-export const Login = () => {
+export const Login = ({logIn}) => {
     const navigate = useNavigate();
     const username = useRef(null);
     const password = useRef(null);
@@ -16,6 +17,7 @@ export const Login = () => {
             }
             else {
                 setInvalid(false);
+                logIn(response);
                 navigate("/");}
     })}
 
@@ -48,4 +50,9 @@ export const Login = () => {
     )
 }
 
-export default Login;
+const stpm = (state) => ({})
+
+const dtpm = (dispatch) => ({
+    logIn: (user) => dispatch({type: "LOGIN", user: user})
+})
+export default connect(stpm, dtpm)(Login);

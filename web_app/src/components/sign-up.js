@@ -4,8 +4,9 @@ import 'react-confirm-alert/src/react-confirm-alert.css'
 import {useNavigate} from "react-router-dom";
 import Logo from "./logo"; // Import css
 import userService from "../services/user-service"
+import {connect} from "react-redux";
 
-export const SignUp = () => {
+export const SignUp = ({logIn}) => {
     const navigate = useNavigate();
     const password = useRef(null);
     const username = useRef(null);
@@ -18,6 +19,7 @@ export const SignUp = () => {
             }
             else {
                 setInvalid(false);
+                logIn(response);
                 confirmAlert({
                      title: 'Successful',                        // Title dialog
                      message: 'Sign-up successful. Click below to start a game.',               // Message dialog
@@ -66,4 +68,10 @@ export const SignUp = () => {
     )
 };
 
-export default SignUp;
+const stpm = (state) => ({})
+
+const dtpm = (dispatch) => ({
+    logIn: (user) => dispatch({type: "LOGIN", user: user})
+})
+
+export default connect(stpm, dtpm)(SignUp);

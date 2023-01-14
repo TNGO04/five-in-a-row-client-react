@@ -6,16 +6,19 @@ import SignUp from "./components/sign-up";
 import Login from "./components/login";
 import SelectGame from "./components/select-game";
 import {GamePage} from "./components/game-page/game-page";
+import {connect} from "react-redux";
 
-export const HomePage = ({isLoggedIn = true}) => {
+
+
+export const HomePage = ({loggedIn}) => {
     return (
         <BrowserRouter>
             <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column overflow-hidden">
-                <NavBar isLoggedIn={isLoggedIn}/>
+                <NavBar />
                 <main role="main" className="inner cover">
                     <Routes>
                         <Route path="/" element={
-                            isLoggedIn ? <SelectGame/> : <HomeContentUnlogged/>}/>
+                            loggedIn ? <SelectGame/> : <HomeContentUnlogged/>}/>
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/game" element={<GamePage/>}/>
@@ -34,4 +37,10 @@ export const HomePage = ({isLoggedIn = true}) => {
     )
 }
 
-export default HomePage;
+const stpm = state => ({
+    loggedIn: state.sessionReducer.loggedIn
+})
+
+const dtpm = dispatch => ({})
+
+export default connect(stpm, dtpm)(HomePage);
