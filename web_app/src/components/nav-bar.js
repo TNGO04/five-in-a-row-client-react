@@ -1,6 +1,5 @@
 import React from 'react';
 import {Link, useLocation} from "react-router-dom";
-import gameService from "../services/game_service";
 import {connect} from "react-redux";
 
 export const NavBar = ({loggedIn, logOut}) => {

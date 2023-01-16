@@ -10,13 +10,13 @@ export const createGame = (user) => {
     }).then(game => game.json());
 }
 
-export const connectToGame = (user, gameID) => {
+export const connectToGame = (user, gameId) => {
     return fetch(`${API_URL}/connect`, {
         method: 'POST',
         headers: {
             "content-type": "application/json"
         },
-        body: JSON.stringify({user: user, gameID: gameID})
+        body: JSON.stringify({user: user, gameId: gameId})
     }).then(game => game.json());
 }
 

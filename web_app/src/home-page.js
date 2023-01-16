@@ -5,7 +5,7 @@ import HomeContentUnlogged from "./components/home-content";
 import SignUp from "./components/sign-up";
 import Login from "./components/login";
 import SelectGame from "./components/select-game";
-import {GamePage} from "./components/game-page/game-page";
+import GamePage from "./components/game-page/game-page";
 import {connect} from "react-redux";
 
 

@@ -1,7 +1,7 @@
 const initialState = {
     user: [],
-    gameId: [],
-    loggedIn: false
+    loggedIn: false,
+    game: []
 }
 
 export const sessionReducer = (state=initialState, action) => {
@@ -14,6 +14,12 @@ export const sessionReducer = (state=initialState, action) => {
                 user: action.user,
                 loggedIn: true
             }
+        case "CONNECT_TO_GAME":
+            return {
+                ...state,
+                game: action.game
+            }
+
         default:
             return state;
     }
