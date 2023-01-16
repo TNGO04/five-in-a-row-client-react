@@ -19,7 +19,11 @@ export const sessionReducer = (state=initialState, action) => {
                 ...state,
                 game: action.game
             }
-
+        case "UPDATE_GAME":
+            return {
+                ...state,
+                game: action.game
+            }
         default:
             return state;
     }

@@ -1,13 +1,39 @@
 import React from "react";
 import {GameBoard} from "./game-board";
 import {connect} from "react-redux";
+import SockJsClient from "react-stomp";
 
-const GamePage = ({game}) => {
+const SOCKET_URL = "http://localhost:8091/gameplay";
+
+const GamePage = ({game, updateGame}) => {
     const playerX = game.playerX;
     const playerO = game.playerO;
 
+
+    const onConnected = () => {
+        console.log("Connected to WebSocket!");
+    }
+    const onMessageReceived = (msg) => {
+        updateGame(msg);
+
+    }
+
+
+
+
     return (
         <div className="game-page row align-content-center">
+            <SockJsClient
+                url={SOCKET_URL}
+                topics={[`/topic/game-progress/${game._id}`]}
+                onConnect={onConnected}
+                onDisconnect={() => {console.log("Disconnected!")}}
+                onMessage={msg => {
+                    console.log(msg);
+                    onMessageReceived(msg);}
+                }
+                debug={false}
+            />
             <div className="mb-3">Game Id: {game._id}</div>
             <div className="col-3 d-flex flex-column gap-4 d-none d-sm-flex
                     justify-content-center">
@@ -46,5 +72,7 @@ const stpm = state => ({
 })
 
 const dtpm = dispatch => ({
+    updateGame: (updatedGame) =>
+        dispatch({type:"UPDATE_GAME", game: updatedGame})
 })
 export default connect(stpm, dtpm)(GamePage);

@@ -7,13 +7,16 @@ import Login from "./components/login";
 import SelectGame from "./components/select-game";
 import GamePage from "./components/game-page/game-page";
 import {connect} from "react-redux";
+import SockJsClient from 'react-stomp'
 
 
 
-export const HomePage = ({loggedIn}) => {
+const HomePage = ({loggedIn, updateGame}) => {
+
     return (
         <BrowserRouter>
             <div className="text-center cover-container d-flex h-100 p-3 mx-auto flex-column overflow-hidden">
+
                 <NavBar />
                 <main role="main" className="inner cover">
                     <Routes>
@@ -41,6 +44,8 @@ const stpm = state => ({
     loggedIn: state.sessionReducer.loggedIn
 })
 
-const dtpm = dispatch => ({})
+const dtpm = dispatch => ({
+
+})
 
 export default connect(stpm, dtpm)(HomePage);
