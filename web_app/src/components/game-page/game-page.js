@@ -3,7 +3,7 @@ import {GameBoard} from "./game-board";
 import {connect} from "react-redux";
 import SockJsClient from "react-stomp";
 
-const SOCKET_URL = "http://localhost:8091/gameplay";
+const SOCKET_URL = "http://localhost:8092/gameplay";
 
 const GamePage = ({game, updateGame}) => {
     const playerX = game.playerX;
@@ -40,12 +40,12 @@ const GamePage = ({game, updateGame}) => {
 
 
 
-                <div className={`card`}>
+                <div className={`card ${(game.board.nmoves % 2 === 0) ? 'custom-shadow' : ''}`}>
                     <i className="fa-solid icon-large fa-user-group"></i>
                     {playerX.username}
                 </div>
 
-                <div className="card">
+                <div className={`card ${(game.board.nmoves % 2 === 1) ? 'custom-shadow' : ''}`}>
                     <div className={`${playerO === null ? 'd-none' : ''}`}>
                         <i className="fa-solid icon-large fa-user-group"></i>
                     </div>

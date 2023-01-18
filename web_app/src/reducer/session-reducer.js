@@ -1,5 +1,6 @@
 const initialState = {
     user: [],
+    symbol: [],
     loggedIn: false,
     game: []
 }
@@ -13,6 +14,11 @@ export const sessionReducer = (state=initialState, action) => {
                 ...state,
                 user: action.user,
                 loggedIn: true
+            }
+        case "SET_PLAYER":
+            return {
+                ...state,
+                symbol: action.symbol
             }
         case "CONNECT_TO_GAME":
             return {

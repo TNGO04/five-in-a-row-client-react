@@ -4,7 +4,7 @@ import {useNavigate} from "react-router-dom";
 import {connect} from "react-redux";
 import gameService from "../services/game-service"
 
-const SelectGame = ({loggedIn, user, connectToGame}) => {
+const SelectGame = ({loggedIn, user, connectToGame, setPlayer}) => {
     const navigate = useNavigate();
     const gameIdRef = useRef("");
 
@@ -12,6 +12,7 @@ const SelectGame = ({loggedIn, user, connectToGame}) => {
         gameService.createGame(user).then(
             newGame => {
                 connectToGame(newGame);
+                setPlayer('X');
                 navigate("/game");
             }
 
@@ -22,6 +23,7 @@ const SelectGame = ({loggedIn, user, connectToGame}) => {
         gameService.connectToGame(user, gameIdRef.current.value).then(
             newGame => {
                 connectToGame(newGame);
+                setPlayer('O');
                 navigate("/game");
             })
     }
@@ -57,7 +59,9 @@ const stpm = state => ({
 const dtpm = dispatch => ({
     connectToGame:
         (newGame) => dispatch({type: "CONNECT_TO_GAME",
-                                  game: newGame})
+                                  game: newGame}),
+    setPlayer:
+        (symbol) => dispatch({type:"SET_PLAYER", symbol: symbol})
 })
 
 export default connect(stpm,dtpm)(SelectGame);

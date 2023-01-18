@@ -251,3 +251,6 @@ label {
   line-height: 0.9rem;
 }
 
+.custom-shadow {
+  box-shadow: 0px 0px 5px whitesmoke;
+}
