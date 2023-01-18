@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8091/users"
+const API_URL = "http://localhost:8092/users"
 
 export const signUp = (username, password) =>
     fetch(`${API_URL}/register`, {

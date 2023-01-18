@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:8091/game"
+const API_URL = "http://localhost:8092/game"
 
 export const createGame = (user) => {
     return fetch(`${API_URL}/start`, {
@@ -27,7 +27,7 @@ export const gamePlay = (gameplay) => {
             "content-type": "application/json"
         },
         body: JSON.stringify(gameplay)
-        }).then(game => game.response());
+        }).then(response => {return response});
 }
 
 export default {createGame, connectToGame, gamePlay};
