@@ -34,7 +34,21 @@ const GamePage = ({game, updateGame}) => {
                 }
                 debug={false}
             />
-            <div className="mb-3">Game Id: {game._id}</div>
+            <div className="mb-1">Game Id: {game._id}</div>
+            <div className="mb-3">
+                {
+                    game.status === "NEW" && <>Waiting for another player...</>
+                }
+                {
+                (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 0) && <> Player {playerX.username} is making a move.</>
+                }
+                {
+                (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 1) && <> Player {playerO.username} is making a move.</>
+                }
+                {
+                    game.status === "FINISHED" && <>Player {game.winner.username} won!</>
+                }
+            </div>
             <div className="col-3 d-flex flex-column gap-4 d-none d-sm-flex
                     justify-content-center">
 
