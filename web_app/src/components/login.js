@@ -9,11 +9,13 @@ export const Login = ({logIn}) => {
     const username = useRef(null);
     const password = useRef(null);
     const [isInvalid, setInvalid] = useState(false);
+    const [errorMessage, setErrorMessage] = useState("");
 
     const submit = () =>    {
         userService.logIn(username.current.value, password.current.value).then(response => {
             if (response.status === 404) {
                 setInvalid(true);
+                response.text().then(message => setErrorMessage(message));
             }
             else {
                 setInvalid(false);
@@ -27,7 +29,7 @@ export const Login = ({logIn}) => {
             {
                 isInvalid &&
                 <div className="mb-4">
-                    Credentials not found
+                    {errorMessage}
                 </div>
             }
             <div className="px-5">
