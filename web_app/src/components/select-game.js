@@ -28,6 +28,16 @@ const SelectGame = ({loggedIn, user, connectToGame, setPlayer}) => {
             })
     }
 
+    const navToAIGame = () => {
+        gameService.connectToAIGame(user).then(
+            newGame => {
+                connectToGame(newGame);
+                setPlayer('O');
+                navigate("/game");
+            }
+        )
+    }
+
     return (
         <>
             <Logo/>
@@ -43,7 +53,7 @@ const SelectGame = ({loggedIn, user, connectToGame, setPlayer}) => {
 
                 <div className="card">
                     <div className="d-none d-sm-flex mb-1"><i className="fa-solid icon-large fa-robot"/></div>
-                    <button className="btn btn-custom"> New AI Game</button>
+                    <button onClick={navToAIGame} className="btn btn-custom"> New AI Game</button>
                 </div>
 
             </div>

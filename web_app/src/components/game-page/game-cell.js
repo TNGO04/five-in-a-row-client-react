@@ -2,7 +2,7 @@ import React, {useState} from "react";
 import gameService from "../../services/game-service"
 import {connect} from "react-redux";
 
-const GameCell = ({row, col, symbol, gameId, game}) => {
+const GameCell = ({row, col, symbol, gameId, game, makeAIMove}) => {
     const [moveSymbol, setMoveSymbol] = useState("");
 
     const makeMove = () => {
@@ -11,12 +11,20 @@ const GameCell = ({row, col, symbol, gameId, game}) => {
             rowCoordinate: row,
             colCoordinate: col,
             gameId: gameId}).then((response) => {
-                     if (response.status !== 200) {response.text().then(message => alert(message))}});
+                     if (response.status !== 200) {response.text().then(message => alert(message))}
+            else {
+                     if (game.playerX.username === "Computer") {
+                         makeAIMove();
+                     }}});
+
+
     }
 
     return (
-        <div onClick={makeMove} id={`${row}_${col}`} className="d-flex flex-fill bd-highlight flex-column m-0
-                                board-cell">
+        <div onClick={makeMove} id={`${row}_${col}`}
+             className={`d-flex flex-fill bd-highlight flex-column m-0 board-cell
+                ${((game.board.lastMoveRow === row) && (game.board.lastMoveCol === col))
+                            ? 'border-glow': ''}`}>
             <div className="symbol align-center">
                 {game.board.board[row][col] == "X" && <>X</>}
                 {game.board.board[row][col] == "O" && <>O</>}</div>

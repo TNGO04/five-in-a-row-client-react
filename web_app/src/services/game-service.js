@@ -19,6 +19,16 @@ export const connectToGame = (user, gameId) => {
         body: JSON.stringify({user: user, gameId: gameId})
     }).then(game => game.json());
 }
+export const connectToAIGame = (user) => {
+    return fetch(`${API_URL}/connect/computer`, {
+        method: 'POST',
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify(user)
+    }).then(game => game.json());
+
+}
 
 export const gamePlay = (gameplay) => {
     return fetch(`${API_URL}/gameplay`, {
@@ -30,4 +40,9 @@ export const gamePlay = (gameplay) => {
         }).then(response => {return response});
 }
 
-export default {createGame, connectToGame, gamePlay};
+export const gamePlayComputer = (gameId) => {
+    return fetch(`${API_URL}/gameplay/computer?id=${gameId}`)
+        .then(response => {return response});
+}
+
+export default {createGame, connectToGame, gamePlay, connectToAIGame, gamePlayComputer};
