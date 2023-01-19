@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import {useRef} from "react";
 import Logo from "./logo";
 import {useNavigate} from "react-router-dom";
 import {connect} from "react-redux";

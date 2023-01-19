@@ -5,20 +5,19 @@ import {connect} from "react-redux";
 const GameCell = ({row, col, symbol, gameId, game, makeAIMove}) => {
     const [moveSymbol, setMoveSymbol] = useState("");
 
-    const makeMove = () => {
+    const makeMove = () =>
         gameService.gamePlay({
             symbol: symbol,
             rowCoordinate: row,
             colCoordinate: col,
             gameId: gameId}).then((response) => {
-                     if (response.status !== 200) {response.text().then(message => alert(message))}
+             if (response.status !== 200) {response.text().then(message => alert(message))}
             else {
-                     if (game.playerX.username === "Computer") {
-                         makeAIMove();
-                     }}});
+                response.json().then(game => {
+                     if (game.winner === null && game.playerX.username === "Computer") makeAIMove();
+                })}
 
-
-    }
+    })
 
     return (
         <div onClick={makeMove} id={`${row}_${col}`}

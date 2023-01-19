@@ -1,8 +1,7 @@
-import React from 'react';
 import {Link} from "react-router-dom";
 import Logo from "./logo";
 
-export const HomeContentUnlogged = () => {
+export const HomeContentDefault = () => {
     return (
         <>
             <Logo/>
@@ -29,4 +28,4 @@ export const HomeContentUnlogged = () => {
     )
 }
 
-export default HomeContentUnlogged;
+export default HomeContentDefault;

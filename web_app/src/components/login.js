@@ -1,4 +1,4 @@
-import React, {useRef, useState} from 'react'
+import {useRef, useState} from 'react'
 import Logo from "./logo";
 import userService from "../services/user-service";
 import {useNavigate} from "react-router-dom";
