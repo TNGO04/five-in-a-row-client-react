@@ -4,18 +4,15 @@ import {connect} from "react-redux";
 import SockJsClient from "react-stomp";
 import gameService from "../../services/game-service";
 import PlayerBox from "./player-box";
-
-const SOCKET_URL = "http://localhost:8092/gameplay";
+import {SOCKET_URL} from "../../constants";
 
 const GamePage = ({game, updateGame}) => {
     const playerX = game.playerX;
     const playerO = game.playerO;
 
-
     const onConnected = () => {
         console.log("Connected to WebSocket!");
-
-        if (playerX.username === "Computer" && game.board.nmoves == 0) {
+        if (playerX.username === "Computer") {
             makeAIMove();
         }
     }

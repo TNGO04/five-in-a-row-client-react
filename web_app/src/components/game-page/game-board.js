@@ -1,7 +1,9 @@
 import React from "react";
 import GameCell from "./game-cell";
+import {BOARD_DIMENSION} from "../../constants";
+
 export const GameBoard = ({makeAIMove}) => {
-    const range = Array.from(new Array(20), (x, i) => i);
+    const range = Array.from(new Array(BOARD_DIMENSION), (x, i) => i);
     return (
         <>
         {

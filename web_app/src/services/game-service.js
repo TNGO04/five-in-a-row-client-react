@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:8092/game"
+import {GAME_API_URL} from "../constants";
 
 export const createGame = (user) => {
-    return fetch(`${API_URL}/start`, {
+    return fetch(`${GAME_API_URL}/start`, {
         method: 'POST',
         headers: {
             "content-type": "application/json"
@@ -11,7 +11,7 @@ export const createGame = (user) => {
 }
 
 export const connectToGame = (user, gameId) => {
-    return fetch(`${API_URL}/connect`, {
+    return fetch(`${GAME_API_URL}/connect`, {
         method: 'POST',
         headers: {
             "content-type": "application/json"
@@ -20,7 +20,7 @@ export const connectToGame = (user, gameId) => {
     }).then(game => game.json());
 }
 export const connectToAIGame = (user) => {
-    return fetch(`${API_URL}/connect/computer`, {
+    return fetch(`${GAME_API_URL}/connect/computer`, {
         method: 'POST',
         headers: {
             "content-type": "application/json"
@@ -31,7 +31,7 @@ export const connectToAIGame = (user) => {
 }
 
 export const gamePlay = (gameplay) => {
-    return fetch(`${API_URL}/gameplay`, {
+    return fetch(`${GAME_API_URL}/gameplay`, {
         method: 'POST',
         headers: {
             "content-type": "application/json"
@@ -41,7 +41,7 @@ export const gamePlay = (gameplay) => {
 }
 
 export const gamePlayComputer = (gameId) => {
-    return fetch(`${API_URL}/gameplay/computer?id=${gameId}`)
+    return fetch(`${GAME_API_URL}/gameplay/computer?id=${gameId}`)
         .then(response => {return response});
 }
 

@@ -1,7 +1,7 @@
-const API_URL = "http://localhost:8092/users"
+import {USER_API_URL} from "../constants";
 
 export const signUp = (username, password) =>
-    fetch(`${API_URL}/register`, {
+    fetch(`${USER_API_URL}/register`, {
         method: 'POST',
         body: JSON.stringify({username: username, password: password}),
         headers: {
@@ -11,7 +11,7 @@ export const signUp = (username, password) =>
                 else {return response.json()}})
 
 export const logIn = (username, password) =>
-        fetch(`${API_URL}/login`, {
+        fetch(`${USER_API_URL}/login`, {
                 method: 'POST',
                 body: JSON.stringify({username: username, password: password}),
                 headers: {
