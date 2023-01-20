@@ -25,6 +25,9 @@ export const NavBar = ({loggedIn, logOut}) => {
                         {
                             loggedIn &&
                             <>
+                                <div className={`nav-link`}>
+                                    <Link to="/rule">Rule</Link>
+                                </div>
                                 <div className={`nav-link`} onClick={logOut}>
                                     <Link to="/">Log Out</Link>
                                 </div>

@@ -60,16 +60,16 @@ const GamePage = ({game, updateGame}) => {
                         game.status === "NEW" && <>Waiting for another player...</>
                     }
                     {
-                        (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 0) && <> Player {playerX.username} is making a move.</>
+                        (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 0) && <> {playerX.username}'s turn to make a move</>
                     }
                     {
-                        (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 1) && <> Player {playerO.username} is making a move.</>
+                        (game.status === "IN_PROGRESS" && game.board.nmoves % 2 === 1) && <> {playerO.username}'s turn to make a move</>
                     }
                     {
                         game.status === "FINISHED" && game.winner === null && <>It is a tie!</>
                     }
                     {
-                        game.status === "FINISHED" && game.winner !== null && <>Player {game.winner.username} won!</>
+                        game.status === "FINISHED" && game.winner !== null && <> {game.winner.username} won!</>
                     }
                 </div>
                 <div className="game-board card">

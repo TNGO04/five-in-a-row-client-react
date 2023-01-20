@@ -6,6 +6,7 @@ import Login from "./components/login";
 import SelectGame from "./components/select-game";
 import GamePage from "./components/game-page/game-page";
 import {connect} from "react-redux";
+import RulePage from "./components/rule-page";
 
 const HomePage = ({loggedIn, updateGame}) => {
     return (
@@ -19,6 +20,7 @@ const HomePage = ({loggedIn, updateGame}) => {
                         <Route path="/login" element={<Login/>}/>
                         <Route path="/signup" element={<SignUp/>}/>
                         <Route path="/game" element={<GamePage/>}/>
+                        <Route path="/rule" element={<RulePage/>}/>
                     </Routes>
 
                 </main>
