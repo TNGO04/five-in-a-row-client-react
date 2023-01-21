@@ -55,7 +55,7 @@ const GamePage = ({game, updateGame}) => {
 
             </div>
             <div className="col-9 d-flex flex-column align-items-center">
-                <div className="mb-1 text-center small">
+                <div className="mb-2" text-center ">
                     {
                         game.status === "NEW" && <>Waiting for another player...</>
                     }

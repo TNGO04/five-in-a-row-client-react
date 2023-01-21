@@ -45,10 +45,10 @@ const SelectGame = ({loggedIn, user, connectToGame, setPlayer}) => {
             <div className="select-game d-flex flex-row gap-5 flex-wrap justify-content-center">
                 <div className="card">
                     <div className="d-none d-sm-flex mb-1"><i className="fa-solid icon-large fa-user-group"/></div>
-                    <button onClick={navToPvPGame} className="btn btn-custom">New PvP Game</button>
+                    <button onClick={navToPvPGame} className="btn btn-custom">Create Game</button>
                     <button onClick={joinGame} className="btn btn-custom">Join Game</button>
                     <input id="gameIdFld" ref={gameIdRef} type="text" className="form-control form-control-sm"
-                        placeholder="Game ID"/>
+                        placeholder="Game ID to join"/>
                 </div>
 
                 <div className="card">
