@@ -48,7 +48,7 @@ const SelectGame = ({loggedIn, user, connectToGame, setPlayer}) => {
                     <button onClick={navToPvPGame} className="btn btn-custom">New PvP Game</button>
                     <button onClick={joinGame} className="btn btn-custom">Join Game</button>
                     <input id="gameIdFld" ref={gameIdRef} type="text" className="form-control form-control-sm"
-                        placeholder="Game ID"/>
+                        placeholder="Game ID to join"/>
                 </div>
 
                 <div className="card">
